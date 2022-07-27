@@ -1,0 +1,27 @@
+@use "../utils/variables" as *;
+@use "../base/typography" as *;
+@use "../utils/mediaQueries";
+
+body {
+  background: $mainLight;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: $medium400;
+  font-size: $regularFontSize;
+}
+
+header,
+section {
+  min-height: 100vh;
+}
+
+section {
+  display: grid;
+}
+
+a {
+  text-decoration: none;
+}
