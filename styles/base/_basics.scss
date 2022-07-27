@@ -25,3 +25,20 @@ section {
 a {
   text-decoration: none;
 }
+
+.call-to-action {
+  display: none;
+  @include mediaQueries.respond(md) {
+    display: flex;
+    padding: 0.7rem 1.4rem;
+    background: $mainBlue;
+    color: $mainLight;
+    text-transform: uppercase;
+    font-size: $smallFontSize;
+    font-weight: $bold600;
+    letter-spacing: 0.4px;
+    min-width: max-content;
+    border: none;
+    border-radius: 8px;
+  }
+}
