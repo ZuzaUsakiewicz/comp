@@ -1,0 +1,64 @@
+@use "../utils/variables" as *;
+@use "../utils/mediaQueries";
+@use "../utils/mixins" as *;
+
+.navigation {
+  width: 100%;
+  height: 10vh;
+  border-bottom: 3px solid black;
+  max-width: 1200px;
+  position: relative;
+  @include flexBetween;
+  padding: 0 2vw;
+}
+
+.hamburger {
+  position: absolute;
+  right: 2vw;
+  width: 8vh;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+
+  @include mediaQueries.respond(md) {
+    display: none;
+  }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    background: red;
+  }
+}
+
+.contact-btn {
+  display: none;
+  @include mediaQueries.respond(md) {
+    display: block;
+  }
+}
+
+.links {
+  ul {
+    display: none;
+    list-style-type: none;
+    @include mediaQueries.respond(md) {
+      @include flexCenter;
+    }
+    li {
+      padding: 0 2vw;
+      a {
+        color: $mainDark;
+      }
+    }
+  }
+  // justify-content: space-between;
+  // align-items: center;
+  // position: relative;
+  // top: 10vh;
+  width: 100%;
+  // background: pink;
+}
