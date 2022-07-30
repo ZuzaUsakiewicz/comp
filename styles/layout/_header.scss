@@ -1,0 +1,26 @@
+.header {
+  padding: 1rem 0.7rem 0 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  h1 {
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 2rem;
+  }
+  p {
+    text-align: justify;
+  }
+  img {
+    width: 80%;
+    height: auto;
+  }
+  .blob {
+    position: absolute;
+    inset: 10% 0 0 10%;
+    opacity: 0.4;
+    z-index: -1;
+  }
+}
