@@ -17,13 +17,8 @@ body {
   font-size: $regularFontSize;
 }
 
-header,
-section {
-  min-height: 100vh;
-}
-
-section {
-  display: grid;
+header {
+  min-height: 90vh;
 }
 
 a {
@@ -31,18 +26,49 @@ a {
 }
 
 .call-to-action {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: $mainBlue;
+  color: $mainLight;
+  text-transform: uppercase;
+  font-size: $smallFontSize;
+  font-weight: $bold600;
+  letter-spacing: 0.4px;
+  border: none;
+  border-radius: 3px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  &:hover {
+    opacity: 0.7;
+  }
+  &.reverse {
+    background: $secondaryBlue;
+    color: $mainBlue;
+  }
+}
+
+.call-to-action.nav {
   display: none;
   @include mediaQueries.respond(md) {
-    display: flex;
-    padding: 0.7rem 1.4rem;
-    background: $mainBlue;
-    color: $mainLight;
-    text-transform: uppercase;
-    font-size: $smallFontSize;
-    font-weight: $bold600;
-    letter-spacing: 0.4px;
+    display: inline-block;
     min-width: max-content;
-    border: none;
-    border-radius: 8px;
+  }
+}
+
+.section-title {
+  text-align: center;
+  padding: 1rem 0;
+  text-transform: capitalize;
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    content: "";
+    width: 40vw;
+    height: 1rem;
+    transform: translate(-50%, -50%);
+    background: $secondaryBlue;
+    z-index: -1;
   }
 }
