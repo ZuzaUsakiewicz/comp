@@ -1,0 +1,21 @@
+@use "../utils/variables" as *;
+
+.about {
+  padding: 0 1rem;
+  .team-image {
+    width: 100vw;
+  }
+  h3 {
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+  }
+  ul {
+    li {
+      list-style-type: none;
+      i {
+        color: $mainBlue;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+}
