@@ -5,15 +5,22 @@
 .navigation {
   width: 100%;
   height: 10vh;
-  border-bottom: 3px solid black;
   max-width: 1200px;
   position: relative;
   @include flexBetween;
   padding: 0 2vw;
 }
 
+.logo {
+  z-index: 999;
+  position: fixed;
+  @include mediaQueries.respond(md) {
+    position: relative;
+  }
+}
+
 .hamburger {
-  position: absolute;
+  position: fixed;
   right: 2vw;
   width: 8vh;
   height: 5vh;
@@ -22,6 +29,7 @@
   justify-content: space-between;
   border: none;
   background: transparent;
+  z-index: 999;
 
   @include mediaQueries.respond(md) {
     display: none;
@@ -30,7 +38,8 @@
   .line {
     width: 100%;
     height: 3px;
-    background: red;
+    background: $mainDark;
+    z-index: 0;
   }
 }
 
@@ -42,11 +51,29 @@
 }
 
 .links {
+  position: relative;
+  width: 100%;
   ul {
-    display: none;
+    transform: translateX(100%);
+    overflow: hidden;
+    width: 98vw;
+    height: 107vh;
+    background-color: $mainLight;
     list-style-type: none;
+    z-index: 99;
+    position: fixed;
+    inset: -7vh 0 0 0;
+    @include flexCenter;
+    flex-direction: column;
+    transition: transform 0.4s ease-in-out;
     @include mediaQueries.respond(md) {
-      @include flexCenter;
+      flex-direction: row;
+      inset: 0;
+      padding: 0;
+      width: 100%;
+      position: relative;
+      background: transparent;
+      transform: translate(0);
     }
     li {
       padding: 0 2vw;
@@ -55,10 +82,10 @@
       }
     }
   }
-  // justify-content: space-between;
-  // align-items: center;
-  // position: relative;
-  // top: 10vh;
-  width: 100%;
-  // background: pink;
+
+  &.active {
+    ul {
+      transform: translateX(0);
+    }
+  }
 }
