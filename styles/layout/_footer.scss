@@ -1,0 +1,49 @@
+@use "../utils/variables" as *;
+@use "../base/typography" as *;
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  > * {
+    padding: 0.7rem 0;
+  }
+  .logo,
+  .social-icons {
+    text-align: center;
+  }
+  .social-icons {
+    font-size: $veryLargeFontSize;
+    display: flex;
+    justify-content: space-evenly;
+    a {
+      i {
+        transition: transform 0.5s ease-in-out, color 0.4s ease-in-out;
+        &:hover {
+          transform: translateY(5px);
+          color: $red;
+        }
+      }
+    }
+  }
+  .adress {
+    span {
+      display: flex;
+      align-items: center;
+      i {
+        padding-right: 0.5rem;
+      }
+    }
+  }
+  .working-hours {
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.fa-brands {
+  color: $mainDark;
+}
