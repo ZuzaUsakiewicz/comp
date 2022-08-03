@@ -40,6 +40,18 @@
     height: 3px;
     background: $mainDark;
     z-index: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  &.toggle {
+    :nth-child(1) {
+      transform: rotate(-45deg) translate(-12px, 14px);
+    }
+    :nth-child(2) {
+      opacity: 0;
+    }
+    :nth-child(3) {
+      transform: rotate(45deg) translate(-6px, -10px);
+    }
   }
 }
 
