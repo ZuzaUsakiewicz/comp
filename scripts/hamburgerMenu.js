@@ -9,6 +9,7 @@ const toggleMenu = () => {
     links.forEach((link) =>
       link.addEventListener("click", () => {
         menu.classList.remove("active");
+        hamburgerButton.classList.remove("toggle");
       })
     );
   });
