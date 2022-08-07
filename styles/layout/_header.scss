@@ -1,26 +1,79 @@
+@use "../base/typography" as *;
+@use "../utils/variables" as *;
+@use "../utils/mediaQueries";
+@use "../utils/mixins" as *;
+
 .header {
-  padding: 1rem 0.7rem 0 0.7rem;
+  padding: 5em 1em 2em 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  h1 {
-    text-align: center;
-    text-transform: capitalize;
-    line-height: 2rem;
+  z-index: 1;
+  .images {
+    @include flexCenter;
+    position: relative;
+    .main-img {
+      width: 80%;
+      height: auto;
+      position: relative;
+    }
+    .blob {
+      position: absolute;
+      inset: -15% 0;
+      z-index: -1;
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
   }
-  p {
-    text-align: justify;
+
+  .aside {
+    @include flexCenter;
+    padding: 1em 0;
+    flex-direction: column;
+    max-width: 500px;
+    h1 {
+      text-align: center;
+      text-transform: capitalize;
+      line-height: 2rem;
+    }
+    p {
+      text-align: justify;
+      padding: 1em 0.2rem;
+    }
+    .cta-container {
+      padding-top: 1em;
+    }
   }
-  img {
-    width: 80%;
-    height: auto;
+
+  @include mediaQueries.respond(md) {
+    padding: 1em;
+    max-width: 1200px;
+    flex-direction: row;
+    jusitfy-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    gap: 1em;
+    .images {
+      width: 100%;
+      .main-img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
-  .blob {
-    position: absolute;
-    inset: 10% 0 0 10%;
-    opacity: 0.4;
-    z-index: -1;
+  @include mediaQueries.respond(lg) {
+    padding: 2em;
+    .images {
+      width: 50%;
+      .main-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .aside {
+      width: 60%;
+      max-width: 600px;
+    }
   }
 }
