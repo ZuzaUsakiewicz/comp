@@ -1,20 +1,56 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/mediaQueries";
 
 .about {
   padding: 0 1rem;
+  max-width: 1200px;
   .team-image {
     width: 100vw;
   }
-  h3 {
-    text-transform: capitalize;
-    padding-bottom: 1rem;
+  .aside {
+    @include flexCenter;
+    flex-direction: column;
+    h3 {
+      text-transform: capitalize;
+      padding-bottom: 1rem;
+    }
+    p {
+      max-width: 550px;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        i {
+          color: $mainBlue;
+          padding-right: 0.5rem;
+        }
+      }
+    }
   }
-  ul {
-    li {
-      list-style-type: none;
-      i {
-        color: $mainBlue;
-        padding-right: 0.5rem;
+
+  @include mediaQueries.respond(md) {
+    .about-container {
+      width: 90vw;
+      @include flexCenter;
+      flex-direction: column;
+      .team-image {
+        width: 70%;
+      }
+    }
+  }
+  @include mediaQueries.respond(lg) {
+    @include flexCenter;
+    flex-direction: column;
+    .about-container {
+      @include flexCenter;
+      flex-direction: row;
+      .team-image {
+        width: 50%;
+      }
+      .aside {
+        width: 40%;
+        padding-top: 1em;
       }
     }
   }
