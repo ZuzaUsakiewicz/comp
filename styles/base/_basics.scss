@@ -15,16 +15,27 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: $medium400;
   font-size: $regularFontSize;
-}
-
-header {
-  min-height: 90vh;
+  @include mediaQueries.respond(md) {
+    justify-content: center;
+  }
 }
 
 a {
   text-decoration: none;
 }
 
+p {
+  text-align: justify;
+}
+#logo-icon {
+  color: $red;
+  font-size: $largeFontSize;
+  span {
+    font-weight: bold;
+    padding-left: 0.4rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+}
 .call-to-action {
   display: inline-block;
   padding: 0.6rem 1.2rem;
@@ -65,7 +76,7 @@ a {
     bottom: 15%;
     left: 50%;
     content: "";
-    width: 40vw;
+    width: 7em;
     height: 1rem;
     transform: translate(-50%, -50%);
     background: $secondaryBlue;
