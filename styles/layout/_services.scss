@@ -4,21 +4,23 @@
 
 .services {
   padding: 1rem 0;
-
+  max-width: 1200px;
   .cards-container {
     display: grid;
     justify-content: center;
     align-items: center;
-    padding: 0 1rem;
+    padding: 2em 1em;
     gap: 2rem;
     @include mediaQueries.respond(md) {
       grid-template-columns: repeat(2, 1fr);
+      max-width: 1200px;
     }
     @include mediaQueries.respond(lg) {
       grid-template-columns: repeat(3, 1fr);
     }
     .card {
       background: $white;
+      border-radius: 8px;
       max-width: 500px;
       box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
         0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
@@ -26,6 +28,11 @@
       padding: 2rem;
       @include mediaQueries.respond(lg) {
         max-width: 400px;
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          transform: translateY(10px);
+        }
       }
       h3 {
         padding: 1rem 0;
@@ -38,7 +45,6 @@
       p {
         font-weight: $thin300;
         padding-bottom: 0.7rem;
-        text-align: justify;
       }
       a {
         color: $red;
