@@ -27,6 +27,22 @@ a {
 p {
   text-align: justify;
 }
+.top-btn {
+  position: fixed;
+  bottom: 2em;
+  right: 1em;
+  transform: translateY(150px);
+  transition: transform 0.4s linear;
+  border: none;
+  background: $mainBlue;
+  color: $mainLight;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  &.active {
+    transform: translateY(10px);
+  }
+}
+
 #logo-icon {
   color: $red;
   font-size: $largeFontSize;
