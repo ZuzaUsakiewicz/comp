@@ -10,13 +10,12 @@
     background: $secondaryBlue;
     overflow: hidden;
     border-radius: 8px;
-    padding-top: 3em;
     .cards-container {
       padding: 2em;
       @include flexCenter;
       flex-wrap: wrap;
       gap: 1em;
-      .card {
+      .testimonial {
         width: 300px;
         height: 400px;
         background: $mainLight;
@@ -25,30 +24,45 @@
         box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
           0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
           0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+        .image-container {
+          width: 100%;
+          height: 50%;
+          position: relative;
+          img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 10px;
+            background: $mainBlue;
+          }
+        }
+        .testimonial-text {
+          @include flexCenter;
+          flex-direction: column;
+          padding: 1.5rem 0.5rem;
+          height: 50%;
+          quote {
+            font-style: italic;
+            text-align: justify;
+            font-size: $smallFontSize;
+            padding: 0 0.5rem;
+          }
+          .stars {
+            i {
+              color: rgb(35, 66, 220);
+            }
+          }
+        }
       }
     }
   }
-  &::before {
-    content: attr(data-icon);
-    @include flexCenter;
-    align-items: flex-start;
-    color: $mainLight;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    position: absolute;
-    font-size: 10rem;
-    top: 1%;
-    left: 1%;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background: $mainBlue;
-  }
-  // &::after {
-  //   ;
-  //   font-size: 10rem;
-  //   position: absolute;
-  //   top: 1%;
-  //   left: 10%;
-  // }
 }
