@@ -3,8 +3,11 @@
 @use "../utils/mediaQueries";
 
 .about {
-  padding: 0 1rem;
+  padding: 1rem;
   max-width: 1200px;
+  h2 {
+    padding: 0;
+  }
   .team-image {
     width: 100vw;
   }
@@ -35,7 +38,7 @@
       @include flexCenter;
       flex-direction: column;
       .team-image {
-        width: 70%;
+        width: 40%;
       }
     }
   }
@@ -46,7 +49,7 @@
       @include flexCenter;
       flex-direction: row;
       .team-image {
-        width: 50%;
+        width: 40%;
       }
       .aside {
         width: 40%;
