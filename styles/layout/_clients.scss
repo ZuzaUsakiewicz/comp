@@ -5,9 +5,8 @@
 
 .clients {
   padding: 0 1rem;
-  position: relative;
+  max-width: 97vw;
   .testimonials-container {
-    background: $secondaryBlue;
     overflow: hidden;
     border-radius: 8px;
     .cards-container {
@@ -16,7 +15,7 @@
       flex-wrap: wrap;
       gap: 1em;
       .testimonial {
-        width: 300px;
+        width: 280px;
         height: 400px;
         background: $mainLight;
         border-radius: 8px;
