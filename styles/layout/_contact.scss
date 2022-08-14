@@ -1,45 +1,103 @@
+@use "../base/typography" as *;
 @use "../utils/variables" as *;
 @use "../utils/mediaQueries";
 @use "../utils/mixins" as *;
 
-.form-container {
-  padding: 2rem 1rem;
-
-  form {
-    min-height: 45vh;
-    @include flexBetween;
+.contact {
+  padding: 0 1rem;
+  max-width: 97vw;
+  @include mediaQueries.respond(md) {
+    @include flexCenter;
     flex-direction: column;
-    align-items: flex-start;
-    .input-group {
-      @include flexBetween;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0.5rem 0;
-      label {
-        padding: 4px 0;
-      }
-      input,
-      textarea {
-        border-radius: 4px;
-        border: none;
-        padding: 5px;
-        &::placeholder {
-          opacity: 0.5;
+  }
+  .contact-container {
+    @include mediaQueries.respond(md) {
+      @include flexCenter;
+    }
+    .contact-aside {
+      display: none;
+      @include mediaQueries.respond(md) {
+        visibility: visible;
+        height: 300px;
+        @include flexCenter;
+        flex-direction: column;
+        p {
+          padding: 0rem 1.5rem;
+        }
+        .contact-forms {
+          padding: 1rem 0;
+          span {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            i {
+              padding-right: 0.5rem;
+            }
+          }
         }
       }
-      input {
-        min-width: 300px;
+      .contact-icons {
+        font-size: $veryLargeFontSize;
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
+        a {
+          i {
+            transition: transform 0.5s ease-in-out, color 0.4s ease-in-out;
+            &:hover {
+              transform: translateY(5px);
+              color: $red;
+            }
+          }
+        }
       }
-      textarea {
-        width: 300px;
-        resize: none;
+    }
+    .form-container {
+      padding: 1rem;
+      @include flexCenter;
+      flex-direction: column;
+      @include mediaQueries.respond(md) {
+        p {
+          display: none;
+        }
       }
-      button {
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 4px;
-        background: $mainBlue;
-        color: $mainLight;
+      form {
+        min-height: 45vh;
+        @include flexBetween;
+        flex-direction: column;
+        align-items: flex-start;
+        .input-group {
+          @include flexBetween;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0.5rem 0;
+          label {
+            padding: 4px 0;
+          }
+          input,
+          textarea {
+            border-radius: 4px;
+            border: none;
+            padding: 5px;
+            &::placeholder {
+              opacity: 0.5;
+            }
+          }
+          input {
+            min-width: 300px;
+          }
+          textarea {
+            width: 300px;
+            resize: none;
+          }
+          button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background: $mainBlue;
+            color: $mainLight;
+          }
+        }
       }
     }
   }
