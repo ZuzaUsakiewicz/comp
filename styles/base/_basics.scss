@@ -7,7 +7,19 @@ html {
 }
 
 body {
-  background: $mainLight;
+  // background: $mainLight;
+  background: #ffffff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #ffffff,
+    #ecedf1
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #ecedf1
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -20,6 +32,10 @@ body {
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -27,22 +43,10 @@ a {
 p {
   text-align: justify;
 }
-.top-btn {
-  position: fixed;
-  bottom: 2em;
-  right: 1em;
-  transform: translateY(150px);
-  transition: transform 0.4s linear;
-  border: none;
-  background: $mainBlue;
-  color: $mainLight;
-  padding: 0.4rem 0.8rem;
-  border-radius: 3px;
-  &.active {
-    transform: translateY(10px);
-  }
-}
 
+section {
+  padding: 3rem 0;
+}
 #logo-icon {
   color: $red;
   font-size: $largeFontSize;
@@ -52,50 +56,11 @@ p {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 }
-.call-to-action {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: $mainBlue;
-  color: $mainLight;
-  text-transform: uppercase;
-  font-size: $smallFontSize;
-  font-weight: $bold600;
-  letter-spacing: 0.4px;
-  border: none;
-  border-radius: 3px;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  &:hover {
-    opacity: 0.7;
-  }
-  &.reverse {
-    background: $secondaryBlue;
-    color: $mainBlue;
-  }
-}
-
-.call-to-action.nav {
-  display: none;
-  @include mediaQueries.respond(md) {
-    display: inline-block;
-    min-width: max-content;
-  }
-}
 
 .section-title {
   text-align: center;
   padding: 1rem 0;
   text-transform: capitalize;
   position: relative;
-  &::after {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    content: "";
-    width: 7em;
-    height: 1rem;
-    transform: translate(-50%, -50%);
-    background: $secondaryBlue;
-    z-index: -1;
-  }
+  font-size: 2rem;
 }
